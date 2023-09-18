@@ -1,0 +1,42 @@
+"""Realizar un programa en el cual se declaren dos valores enteros por teclado utilizando 
+el método __init__. 
+Calcular después la suma, resta, multiplicación y división. 
+Utilizar un método para cada una e imprimir los resultados obtenidos. 
+Llamar a la clase Calculado"""
+
+class Entero:
+    def __init__(self, num1, num2): #inicializo
+
+        self.num1 = num1
+        self.num2 = num2
+
+    def Sumar(self):
+
+        sumar = num1+num2
+        print(sumar)
+        return sumar
+    def Restar(self):
+
+        restar = num1-num2
+        print(restar)
+        return restar
+    def multiplicar(self):
+
+        mult = num1*num2
+        print(mult)
+        return mult
+    def div(self):
+        div = num1/num2
+        print(div)
+        return div
+
+num1 = int(input("Ingrese el primer valor: "))
+num2 = int(input("Ingrese el segundo valor: "))
+
+misEnteros = Entero(num1, num2)
+
+misEnteros.Sumar()
+misEnteros.Restar()
+misEnteros.div()
+misEnteros.multiplicar()
+
