@@ -2,8 +2,18 @@
 @import 'estilos.css';
 
 
+
+body{
+
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
 html {
     font-family: "Roboto", "sans-serif";
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
 
 }
 
@@ -15,8 +25,8 @@ p {
 h1 {
     font-size: 26px;
     color: var(--titulos);
-    padding-bottom: 20x;
-
+    padding-bottom: 20px;
+    margin: 0%;
 
 }
 
@@ -24,11 +34,14 @@ h2 {
     font-size: 22px;
     color: var(--titulos);
 
+
+
 }
 
 h3 {
     font-size: 18px;
     color: var(--titulos);
+    margin: 0%;
 }
 
 .header-page {
@@ -38,27 +51,15 @@ h3 {
     margin: 0% auto auto auto;
     width: 100%;
     display: flex;
-
-}
-
-.header-page a {
-    color: white;
 }
 
 
 .logo  {
     width: 150px;
+    padding: 0.9em;
+    margin: 0%;
 }
 
-footer, footer > p{
-
-    background-color: var(--fondo-Footer);
-    color: var(--texto-footer);
-    padding: 4%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-}
 
 
 #titulo-cabecera{
@@ -66,39 +67,214 @@ footer, footer > p{
     flex-direction: row;
     padding: 1%;
     font-size: 20px;
-
-    
+    margin: 0%;
 
 
 }
 
 .segunda-cabecera{
-    display: flex;
-    flex-direction: row;
+   display: flex;
     background-color: var(--fondo-Menu);
     width: 100%;
-    padding-top: 20px;
+    padding: 5px;
     background-color: var(--fondo-Menu);
-    justify-content: flex-end;
+    justify-content: start;
+    margin: 0%;
+    box-sizing: border-box;
+    text-align: center;
+
+
+    
 }
 
-.active{
+.active{ 
     color: white;
     text-decoration: none;
     border: 1px solid white;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 0.5% 1%;
-    margin: 0px 13px;
     box-sizing: border-box;
+    margin-left: 13px;
+    margin-right: 13px;
+    font-size: small;
+    margin-left: 1%;
 
     
 }
 
+.active:hover{
+    background-color: var(--gris-claro);
+}
 
-#texto-footer{
-    
-    word-spacing: 2px;
+
+footer{
+    background-color: var(--fondo-Footer);
+    margin: 0%;
+    padding: 2%;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+
+
+}
+
+
+.logo-footer{
+    width: 10%;
+    padding: 1%;
+    margin: 0%;
+    height: 10%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.texto-footer{
+    color: var(--texto-footer);
     line-height: 30px;
+    padding-left: 40px;
+    margin: 0%;
+}
+.titulo-texto{
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    margin: 0%;
+    
+    
+}
+
+#texto-index{
+    font-size: medium;
+    text-align: start;
+    font-weight: 400;
+    margin-right: 20%;
+    padding-top: 2%;
+ 
+
+    
+}
+
+.imagen-index{
+    width: 60%;
+    padding: 5%;
+    margin: 0%;
+}
+
+#sec-contenido{
+    
+
+    margin-right: 20%;
+    padding: 2%;
+    margin: 0%;
+    justify-content: center;
+}
+#sec-contenido h3 {
+    font-size: 150%;
+    margin: 0%;
+
+    
+}
+
+.caja-botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 
+
+.boton-paso{
+    font-size: larger;
+    font-weight: 300;
+    background-color: var(--magenta);
+    border-radius: 5px;
+    color: white;
+    padding: 2%;
+    width: 20%;
+    text-align: center;
+    margin: 2%;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.boton-paso a {
+    text-decoration: none;
+    color: white;
+}
+
+.boton-paso:hover{
+    background-color: var(--gris-claro);
+}
+
+.boton-general{
+    background-color: var(--celeste);
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: white;
+    padding: 2%;
+    width: 20%;
+    margin: 2%;
+    font-weight: 300;
+    text-align: center;
+    align-self: center;
+    font-size: larger;
+}
+
+.boton-general:hover{
+    background-color: var(--gris-claro);
+}
+
+.boton-general a {
+    color: white;
+    text-decoration: none;
+}
+
+.texto-encima-botones{
+   justify-content: center;
+   font-size: large;
+}
+
+.active4{
+    background-color: var(--fondo-Menu);
+    color: white;
+    text-decoration: none;
+    padding: 0.5% 1%;
+    box-sizing: border-box;
+    font-size: small;
+    margin-left: 1%;
+
+}
+
+.active2{
+    background-color: var(--magenta);
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.5% 1%;
+    box-sizing: border-box;
+    font-size: small;
+    margin-left: 1%;
+    width: 8%;
+}
+
+.active2:hover{
+    background-color: var(--gris-claro);
+}
+.active3{
+    background-color: var(--fondo-Cabecera);
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.5% 1%;
+    box-sizing: border-box;
+    font-size: small;
+    margin-left: 1%;
+    width: 8%;
+    
+}
+
+.active3:hover{
+    background-color: var(--gris-claro);
 }
