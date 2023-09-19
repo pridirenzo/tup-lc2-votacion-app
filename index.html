@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Publicación de Resultados Electorales</title>
     <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/common.css" />
 </head>
 
 <body>
@@ -16,14 +17,17 @@
         <!--Barra de logo portal-->
         <div class="header-page">
             <a href="index.html">
-                <img src="img/DINE.jpg" alt="logo" class="logo" href="index.html">
-                <h1 id="titulo-cabecera"> Dirección Nacional <br>Electoral
+                <img src="img/Logo_DINE_negativo.png" alt="logo" class="logo" href="index.html">
+                <h1 id="titulo-cabecera">
             </a>
         </div>
         <!--Barra de menú principal-->
         <div class="segunda-cabecera">
-            <a class="active" href="informes.html">INFORMES</a> 
-            <!--- <a href="#contact">Contacto</a> ESTO NO SE DONDE IRIA, PORQUE NO APARECE EN NINGUNA IMAGEN.-->
+            <a class="active4">CONSULTAR:</a>
+            <a class="active2" href="paso.html">PASO</a>
+            <a class="active3" href="generales.html">GENERALES</a>
+            <a class="active" href="informes.html">INFORMES</a>
+            
         </div>
 
     </header>
@@ -31,23 +35,32 @@
     <main>
         <section id="sec-titulo">
 
-            <h2>Resultados electorales</h2>
-            <p>La Dirección Nacional Electoral y el Observatorio Político Electoral del Ministerio
-                del Interior ponen a disposición una herramienta de búsqueda avanzada y generación
-                de informes personalizados con los resultados provisionales de las elecciones
-                desarrolladas en los últimos años.
-                Los resultados que se presentan son los correspondientes a escrutinios provisorios de
-                elecciones nacionales. Dicho recuento es responsabilidad de la DINE. También se
-                presentan los resultados provisionales de las elecciones provinciales y/o locales
-                realizados bajo la adhesión a ley de simultaneidad.</p>
-            <div>Imagen</div>
+            <div class="titulo-texto">
+                <h2>Resultados electorales
+                    <p id="texto-index">La Dirección Nacional Electoral y el Observatorio Político Electoral del Ministerio
+                        del Interior ponen a disposición una herramienta de búsqueda avanzada y generación
+                        de informes personalizados con los resultados provisionales de las elecciones
+                        desarrolladas en los últimos años. <br> 
+                        Los resultados que se presentan son los correspondientes a escrutinios provisorios de
+                        elecciones nacionales. Dicho recuento es responsabilidad de la DINE. También se
+                        presentan los resultados provisionales de las elecciones provinciales y/o locales
+                        realizados bajo la adhesión a ley de simultaneidad.</p>
+                </h2>
+                <img class="imagen-index" src="img/images.png">
+                    
+                </div>
         </section>
         <section id="sec-contenido">
             <!--Seccion para contenido de la página-->
-            <h3> Elecciones 2023 </h3>
-            <p>Resultados provisorios</p>
-            <div>PASO</div> <!--botones-->
-            <div>GENERAL</div>
+            <h3> Elecciones 2021
+                <p class="texto-encima-botones"> Seleccione el tipo de elección que quiere consultar</p>
+            </h3> 
+            <div class="caja-botones">
+                <div class="boton-paso"> <a href="paso.html">Paso </a></div> <!--botones-->
+                <div class="boton-general">
+                <a href="generales.html">Generales</a></div>
+            </div>
+
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" width="841.889px" height="595.281px" viewBox="0 0 841.889 595.281"
                 enable-background="new 0 0 841.889 595.281" xml:space="preserve" class="v-icon__component theme--light"
@@ -109,12 +122,23 @@
             </svg>
         </section>
         <section id="sec-messages">
-            <!-- supuestamente aquí van mensajes al usuario-->
+            <!--  aquí van mensajes al usuario-->
         </section>
     </main>
     <!--Pie de página-->
     <footer>
-        <p id="texto-footer">Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley 26571 y Art. 105 Ley 19945). Los porcentajes de las agrupaciones políticas son calculados sobre los votos válidos (PASO) conforme al art. 45 Ley 26.571 y afirmativos (Generales). No se incluyen los votos correspondientes a los electores residentes en el exterior ni privados de la libertad. Al usar este sitio usted acepta los <a>Términos y Condiciones</a>.</p>
+        <img class="logo-footer" src="img/icons/Ministerio-del-Interior_pluma.1ab9a7a7.png">
+        <img class="logo-footer" src="img/icons/Logo_DINE_negativo.a88f983e.png">
+        <img class="logo-footer" src="img/icons/logos_001-10.4430c8d5.png">
+        <p class="texto-footer">
+            Resultados Provisorios en base a telegramas recibidos
+            (Art. 43 Ley 26571 y Art. 105 Ley 19945).
+            Los porcentajes de las agrupaciones políticas
+            son calculados sobre los votos válidos (PASO)
+            conforme al art. 45 Ley 26.571 y afirmativos (Generales).
+            No se incluyen los votos correspondientes a los electores residentes
+            en el exterior ni privados de la libertad.
+            Al usar este sitio usted acepta los <a href="index.html">Términos y Condiciones.</a> </p>
     </footer>
 </body>
 
