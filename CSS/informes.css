@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
-
+@import url(estilos.css);
 
 body {
-background-color:   rgb(235, 245, 251);
+background-color:rgb(235, 245, 251);
 margin: 0%;
 font-family: roboto;
 }
@@ -23,14 +23,12 @@ h2 {
     color: #333; 
     font-family: Roboto, sans-serif;
 }
-.header-page {
-    background-color:#37bbed;
-}
-.logo {
+.logo {    
+    
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
-    width: 40px;
+    width: 150px;
 }
 .dir {
     display: inline-block;
@@ -43,10 +41,13 @@ nav {
     background-color: rgb(59, 59, 59);
     display: flex; 
     align-items: center;
+
 }
 nav p{
     font-size: 15px;
     color: white;
+    margin-left: 15px;
+    margin-right: 5px;
 }
 nav a {
     width:25%; 
@@ -56,14 +57,14 @@ nav a {
     text-decoration: none;
     color: white;
     vertical-align: middle;
-    margin-left: 20px;
-    padding: 10px 20px;
+    margin-left: 5px;
+    padding: 10px 10px;
     border-radius: 8px; 
     background-color: #37bbed; 
 } 
 
 .inicio {
-    margin-left: 750px;
+    margin-left: 800px;
     background-color: #9e9e9e;
     color: black;
     
@@ -76,5 +77,6 @@ footer p {
 }
 
 footer {
+    margin: 0%;
     background-color:  black;
 }
