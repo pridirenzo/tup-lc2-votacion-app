@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+
+
+
+body {
+    background-color: rgb(235, 245, 251);
+    margin: 0%;
+    font-family: roboto;
+}
+
+
+.header-page {
+    background-color: #37bbed;
+}
+
+.menu-principal {
+    font-weight: bold;
+    background-color: rgb(59, 59, 59);
+    display: flex;
+    align-items: center;
+}
+
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 40px;
+}
+
+#boton-filtro {
+    margin-left: 15px;
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    height: 23px;
+
+}
+
+.texto-boton {
+    margin-left: 5px;
+}
+
+#boton-inicio {
+    margin-left: 695px;
+    color: white;
+    background-color: var(--gris-claro);
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    font-family: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100px;
+    height: 23px;
+}
+
+#boton-inicio:hover, #boton-filtro:hover {
+    color: var(--textos);
+}
+
+.desplegables select {
+    margin-left: 8px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+}
+
+.active {
+    font-style: normal;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 11px;
+    width: 100px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

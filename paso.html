@@ -10,6 +10,7 @@
 
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="CSS/paso.css" />
 </head>
 
 <body>
@@ -23,20 +24,31 @@
         </div>
         <!--Barra de menú principal-->
 
-        <select id="filtro-año" value="año">Año
-            <option selected disabled>Año</option>
-        </select>
-        <select id="filtro-cargo">Cargo
-            <option selected disabled>Cargo</option>
-        </select>
-        <select id="filtro-distrito">Distrito
-            <option selected disabled>Distrito</option>
-        </select>
-        <button id="boton-filtro"><i class="fa-solid fa-magnifying-glass"></i> Filtrar</button>
+        <div class="menu-principal">
 
-        <a class="active" href="informes.html">Informes</a>
-        <a class="active" href="index.html">Inicio</a>
-        <a href="#contact">Contacto</a>
+            <div class="desplegables">
+                <select id="filtro-año">
+                    <option selected disabled>Año</option>
+                </select>
+                <select id="filtro-cargo">
+                    <option selected disabled>Cargo</option>
+                </select>
+                <select id="filtro-distrito">
+                    <option selected disabled>Distrito</option>
+                </select>
+            </div>
+
+
+
+            <button id="boton-filtro"><i class="fa-solid fa-search"></i><span
+                    class="texto-boton"></span>Filtrar</button>
+            <a href="generales.html"><button id="boton-generales">Generales</button></a>
+            <a class="active" href="informes.html">Informes</a>
+            <a href="#contact">Contacto</a>
+            <a href="index.html"><button id="boton-inicio">Inicio</button></a>
+
+        </div>
+
 
     </header>
     <!-- Contenido principal de la página -->
@@ -268,7 +280,7 @@
                     </td>
                     <td>
                         <div>
-                            
+
                             <div class="title">Mapa</div>
                             <!--Mapas-->
                             <!--//Ciudad Autónoma de Buenos Aires//-->
