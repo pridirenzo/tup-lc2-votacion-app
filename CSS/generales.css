@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 
 
-
-
-body {
-    background-color: rgb(235, 245, 251);
-    margin: 0%;
-    font-family: roboto;
-}
-
-
-.header-page {
-    background-color: #37bbed;
-}
-
 .menu-principal {
     font-weight: bold;
     background-color: rgb(59, 59, 59);
@@ -22,14 +9,9 @@ body {
 }
 
 
-.logo {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-    width: 40px;
-}
 
 #boton-filtro {
+    
     margin-left: 15px;
     border: none;
     background-color: white;
@@ -42,6 +24,8 @@ body {
     display: inline-block;
     width: 100px;
     height: 23px;
+    margin-top: 3px;
+    cursor: pointer;
 
 }
 
@@ -50,7 +34,7 @@ body {
 }
 
 #boton-inicio {
-    margin-left: 695px;
+    margin-left: 748px;
     color: white;
     background-color: var(--gris-claro);
     border-radius: 5px;
@@ -62,6 +46,8 @@ body {
     text-align: center;
     width: 100px;
     height: 23px;
+    margin-top: 3px;
+    cursor: pointer;
 }
 
 #boton-inicio:hover, #boton-filtro:hover {
@@ -89,5 +75,74 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 3px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+
+.mensaje-1 {
+    background-color: var(--mensaje-usuario-verde);
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFffFF;
+    font-size: 12px;
+    font-weight: 200px;
+    text-align: center;
+}
+
+.mensaje-2 {
+    background-color: var(--mensaje-usuario-rojo);
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFffFF;
+    font-size: 12px;
+    font-weight: 200px;
+    text-align: center;
+}
+
+.mensaje-3 {
+    background-color: var(--mensaje-usuario-amarillo);
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFffFF;
+    font-size: 12px;
+    font-weight: 200px;
+    text-align: center;
+}
+
+.fa-thumbs-up, .fa-exclamation-triangle, .fa-exclamation {
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+p {
+    font-size: 14px;
+    color: var(--celeste)
+}
+
+#agregar-informe {
+    background-color: var(--gris-claro);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+    width: 200px;
+    cursor: pointer;
+}
+
+#agregar-informe:hover {
+    color: var(--textos);
 }
 
