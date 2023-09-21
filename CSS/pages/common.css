@@ -248,7 +248,6 @@ footer{
     background-color: var(--magenta);
     color: white;
     text-decoration: none;
-    border: 1px solid white;
     border-radius: 5px;
     padding: 0.5% 1%;
     box-sizing: border-box;
@@ -264,7 +263,6 @@ footer{
     background-color: var(--fondo-Cabecera);
     color: white;
     text-decoration: none;
-    border: 1px solid white;
     border-radius: 5px;
     padding: 0.5% 1%;
     box-sizing: border-box;
