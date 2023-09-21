@@ -11,7 +11,7 @@
 
 
 #boton-filtro {
-    
+
     margin-left: 15px;
     border: none;
     background-color: white;
@@ -23,8 +23,8 @@
     text-align: center;
     display: inline-block;
     width: 100px;
-    height: 23px;
-    margin-top: 3px;
+    height: 30px;
+    margin-top: 1px;
     cursor: pointer;
 
 }
@@ -45,13 +45,15 @@
     text-transform: uppercase;
     text-align: center;
     width: 100px;
-    height: 23px;
-    margin-top: 3px;
+    height: 30px;
+    margin-top: 1px;
     cursor: pointer;
 }
 
-#boton-inicio:hover, #boton-filtro:hover {
+#boton-inicio:hover,
+#boton-filtro:hover {
     color: var(--textos);
+    background-color: #ddd;
 }
 
 .desplegables select {
@@ -71,17 +73,17 @@
     text-transform: uppercase;
     font-size: 11px;
     width: 100px;
-    height: 23px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3px;
+    margin-top: 1px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-  }
+}
 
 .mensaje-1 {
     background-color: var(--mensaje-usuario-verde);
@@ -119,14 +121,21 @@
     text-align: center;
 }
 
-.fa-thumbs-up, .fa-exclamation-triangle, .fa-exclamation {
+.fa-thumbs-up,
+.fa-exclamation-triangle,
+.fa-exclamation {
     margin-right: 5px;
     font-size: 15px;
 }
 
 p {
     font-size: 14px;
-    color: var(--celeste)
+    color: var(--celeste);
+}
+
+#sec-titulo h2,
+#sec-titulo p {
+    text-indent: 75px;
 }
 
 #agregar-informe {
@@ -139,6 +148,7 @@ p {
     text-transform: uppercase;
     border: none;
     width: 200px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -146,3 +156,252 @@ p {
     color: var(--textos);
 }
 
+.recuadros-informativos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+}
+
+#mesas-escrutadas {
+    background-color: var(--celeste);
+}
+
+#electores {
+    background-color: var(--magenta);
+}
+
+#participacion-escrutado {
+    background-color: var(--morado);
+}
+
+#mesas-escrutadas,
+#electores,
+#participacion-escrutado {
+    border-radius: 10px;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+#textos-recuadros p,
+#textos-recuadros-2 {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin-bottom: 0px;
+}
+
+#textos-recuadros p {
+    font-weight: 500;
+}
+
+#textos-recuadros-2 {
+    font-size: 15px;
+}
+
+#boton-celda {
+    padding-left: 50px;
+    padding-right: 250px;
+}
+
+.mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start, center;
+    overflow: hidden;
+    border-radius: 25px;
+    Border: 1px var(borde-Grilla) solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    min-height: 408px;
+}
+
+.resumen-titulo {
+    overflow: hidden;
+    border-radius: 25px;
+    Border: 1px var(borde-Grilla) solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.agrupaciones {
+    padding-left: 50px;
+    overflow: scroll vertical;
+    height: 325px;
+    border-radius: 25px;
+    Border: 1px var(borde-Grilla) solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    min-width: 450px;
+}
+
+.agrupaciones p,
+.mapa p,
+.resumen-titulo {
+
+    color: var(--textos);
+    text-align: center;
+    font-weight: bold;
+    Padding: 1.8em 0 0 0;
+    White-space: nowrap;
+
+}
+
+.agrupaciones p2 {
+    font-size: 12px;
+    color: var(--textos);
+    border-bottom: 1px solid var(--borde-Grilla);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.agrupaciones p3 {
+    color: var(--textos);
+    font-size: 11px;
+    Padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.progress {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+}
+
+.progress-bar-text {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+
+.juntos,
+.pj,
+.verde {
+    display: flex;
+    flex-direction: row;
+}
+
+#datos-agrupaciones1 {
+    margin-left: 70%;
+    color: var(--gris-claro);
+}
+
+#datos-agrupaciones2 {
+    margin-left: 76%;
+    color: var(--gris-claro);
+}
+
+#datos-agrupaciones3 {
+    margin-left: 72%;
+    color: var(--gris-claro);
+}
+
+.resumen {
+    border-radius: 25px;
+    Border: 1px var(borde-Grilla) solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    min-width: 350px;
+}
+
+
+.chart-wrap {
+    --chart-width: 260px;
+    --grid-color: #aaa;
+    --bar-thickness: 25px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
+    font-family: sans-serif;
+    width: var(--chart-width);
+    
+}
+
+.chart-wrap .title {
+
+    color: var(--textos);
+    font-weight: bold;
+    padding: 1.8em 0 2.8em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+.chart-wrap.horizontal .grid {
+    transform: rotate(-90deg);
+}
+
+.chart-wrap.horizontal .bar::after {
+    /* giramos las letras para horizontal*/
+    transform: rotate(45deg);
+    padding-top: 0px;
+    display: block;
+}
+
+.chart-wrap .grid {
+    margin-left: 50px;
+    position: relative;
+    padding: 5px 0 5px 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid var(--grid-color);
+    font-size: 10px;
+}
+
+/* posicionamos el % del gráfico*/
+.chart-wrap .grid::before {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '0%';
+    position: absolute;
+    left: -0.5em;
+    top: -1.5em;
+}
+
+.chart-wrap .grid::after {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '100%';
+    position: absolute;
+    right: -1.5em;
+    top: -1.5em;
+}
+
+/* giramos las valores de 0% y 100% para horizontal */
+.chart-wrap.horizontal .grid::before,
+.chart-wrap.horizontal .grid::after {
+    transform: rotate(90deg);
+}
+
+.chart-wrap .bar {
+    width: var(--bar-value);
+    height: var(--bar-thickness);
+    margin: var(--bar-spacing) 0;
+    background-color: var(--bar-color);
+    border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
+}
+
+.chart-wrap .bar:hover {
+    opacity: 0.7;
+}
+
+.chart-wrap .bar::after {
+    content: attr(data-name);
+    margin-left: 100%;
+    padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+}
