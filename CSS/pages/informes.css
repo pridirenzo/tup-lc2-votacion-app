@@ -16,7 +16,7 @@ nav {
 
 }
 nav p{
-    font-size: 15px;
+    font-size: 13px;
     color: white;
     margin-left: 15px;
     margin-right: 5px;
@@ -25,13 +25,13 @@ nav a {
     width:25%; 
     height: 16px;
     text-align: center;
-    font-family: roboto;
+    font-size: 13px;
     text-decoration: none;
-    color: white;
+    color: #FFffFF;
     vertical-align: middle;
     margin-left: 5px;
-    padding: 10px 10px;
-    border-radius: 8px; 
+    padding: 5px;
+    border-radius: 5px; 
     background-color: #37bbed; 
 } 
 
@@ -60,7 +60,6 @@ table {
 }
 td {
     background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid --borde-inferior-Grilla;
     padding: 15px 0px;
     font-size: 12px;
     border-collapse: collapse;
@@ -81,63 +80,69 @@ td {
 }
 
 .paso {
-    background-color: #ee3d8f;
+    background-color: var(--magenta);
 }
 
 .mesas-comp {
     background-color: var(--celeste);
-    width: 120px; 
-    height: 70px;
-    margin: 2px;
-    font-size: 10px;
-    color: #FFffFF;
-    border-radius: 5px;
-}
+    border-radius: 10px;
+    margin: 15px;
+    width: 140px;
+    height: 60px;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    display: flex;
 
+}
 .elec {
     background-color: var(--magenta);
-    width: 120px; 
-    height: 70px;
-    margin: 2px;
-    font-size: 10px;
-    color: #FFffFF;
-    border-radius: 5px;
-    
-
+    border-radius: 10px;
+    margin: 15px;
+    width: 140px;
+    height: 60px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .part-esc {
     background-color: var(--morado);
-    width: 120px; 
-    height: 70px;
-    margin: 2px;
-    border-radius: 5px;
-    font-size: 10px;
-    color: #FFffFF;
-    vertical-align: center;
+    border-radius: 10px;
+    margin: 15px;
+    width: 140px;
+    height: 60px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
 }
 .mesas-comp p {
+    display: flex;
+    flex-direction: column;
     color: white;
     text-align: center;
+    
+    
     
 }
 
 .elec p {
     color: white;
-    text-align: center; /* Centra el contenido de las celdas horizontalmente */
-    
+    color: #fff;
+    margin-bottom: 0px;
 }    
 
 .part-esc p {
+    display: flex;
+    flex-direction: column;
     color: white;
-    text-align: center;
+
    
 }
 .container {
     display: flex;
     flex-direction: column;
   }
-  .mensaje-1 {
+.mensaje-1 {
     background-color: var(--mensaje-usuario-verde);
     width: 400px;
     margin: 20px auto;
@@ -183,4 +188,31 @@ td {
     padding: 5px;
     font-size: 10px;
     color: var(--textos);
+}
+.mesas-comp1 {
+    display: flex;
+    flex-direction: column;
+}
+.elec1 {
+    display: flex;
+    flex-direction: column;
+}
+.mesas-comp1 {
+    display: flex;
+    flex-direction: column;
+}
+.anid {
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+}
+.tab1 {
+    border: none;
+    border-collapse: collapse;
+}
+td, .sep {
+    padding-left: 18px;
+}
+.sep1 {
+    padding-left: 50px;
 }
