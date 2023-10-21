@@ -7,40 +7,32 @@
     color: white;
 }
 
-nav {
-    font-weight: bold;
-    background-color: rgb(59, 59, 59);
-    display: flex; 
-    align-items: center;
-    
-
+.contenedor-boton-inicio {
+    margin-left: auto;
 }
-nav p{
-    font-size: 13px;
+
+#boton-inicio {
     color: white;
-    margin-left: 15px;
-    margin-right: 5px;
-}
-nav a {
-    width:25%; 
-    height: 16px;
-    text-align: center;
-    font-size: 13px;
-    text-decoration: none;
-    color: #FFffFF;
-    vertical-align: middle;
-    margin-left: 5px;
+    background-color: var(--gris-claro);
+    border-radius: 5px;
     padding: 5px;
-    border-radius: 5px; 
-    background-color: #37bbed; 
-} 
+    border: none;
+    font-family: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    margin-top: 1px;
+    cursor: pointer;
+}
 
-.inicio {
-    margin-left: 800px;
-    background-color: #9e9e9e;
-    color: black;
-    font-weight: bold;
-} 
+
+#boton-inicio:hover, .gen:hover, .paso:hover {
+    color: var(--textos);
+    background-color: #ddd;
+}
+
 .texto-elecciones-chico {
     font-size: 12px;
     color: var(--textos);
@@ -51,13 +43,23 @@ nav a {
     color: var(--celeste);
 }
 
-table {
+.General {
     margin: 0 auto 50px auto;
     border-radius: 15px;
-    border: 3px solid --borde-Grilla;
+    border: 1px solid var(--borde-Grilla);
     background-color: rgb(250, 250, 250);
-    color: var(--titulo-grilla)
+    color: var(--titulo-grilla);
+
 }
+
+.celdas1 th {
+    color: var(--titulo-Grilla);
+    padding: 10px, 20px;
+    border-bottom: 1px solid var(--borde-Grilla);
+    font-size: 14px;
+
+}
+
 td {
     background-color: rgb(255, 255, 255);
     padding: 15px 0px;
@@ -81,6 +83,32 @@ td {
 
 .paso {
     background-color: var(--magenta);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 0.5% 1%;
+    box-sizing: border-box;
+    font-size: small;
+    margin-left: 1%;
+    width: 8%;
+    
+}
+
+.gen {
+    background-color: var(--fondo-Cabecera);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 0.5% 1%;
+    box-sizing: border-box;
+    font-size: small;
+    margin-left: 1%;
+    width: 8%;
+    
+}
+
+#sec-titulo h2 {
+    text-indent: 75px;
 }
 
 .mesas-comp {
@@ -209,6 +237,7 @@ td {
 .tab1 {
     border: none;
     border-collapse: collapse;
+ 
 }
 td, .sep {
     padding-left: 18px;

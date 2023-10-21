@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 @import 'estilos.css';
 
+* { /*Cambio, lineas blancas al final de la página.*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+header {
+    width: 100%;
+}
+
+main { /*Cambio, ancho de contenido*/
+width: 90%;
+}
 
 body{
-
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
@@ -50,6 +61,7 @@ h3 {
     padding: 0.5em;
     margin: 0% auto auto auto;
     display: flex;
+    width: 100%;
 }
 
 
@@ -62,7 +74,7 @@ h3 {
 
 
 #titulo-cabecera{
-    font-family: 'Roboto';
+
     flex-direction: row;
     padding: 1%;
     font-size: 20px;
@@ -72,18 +84,14 @@ h3 {
 }
 
 .segunda-cabecera{
-   display: flex;
+    display: flex;
     background-color: var(--fondo-Menu);
     width: 100%;
     padding: 5px;
-    background-color: var(--fondo-Menu);
     justify-content: start;
     margin: 0%;
     box-sizing: border-box;
     text-align: center;
-
-
-    
 }
 
 .active{ 
@@ -113,12 +121,12 @@ footer{
     width: 100%;
     display: flex;
     box-sizing: border-box;
-
-
+    
 }
 
 
-.logo-footer{
+.logo-footer{ /*Cambio, alto de las imágenes del footer.*/
+    height: 40px;
     width: 10%;
     padding: 1%;
     margin: 0%;
@@ -170,62 +178,91 @@ footer{
 #sec-contenido h3 {
     font-size: 150%;
     margin: 0%;
+    
 
     
 }
 
+#sec-contenido h3 p {
+    font-weight: normal;
+}
+
 .caja-botones{
+    margin-top: 3%;
+    margin-bottom: 3%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: start;
+    
 }
 
 
 
 .boton-paso{
-    font-size: larger;
-    font-weight: 300;
+
     background-color: var(--magenta);
     border-radius: 5px;
     color: white;
     padding: 2%;
-    width: 20%;
-    text-align: center;
+    width: 400px;
+    height: 100px;
     margin: 2%;
     align-self: center;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
 }
 
-.boton-paso a {
+.paso-texto {
+    margin-left: 10px;
+}
+
+a, .paso-texto h3 {
     text-decoration: none;
     color: white;
+    font-weight: normal;
+
 }
 
 .boton-paso:hover{
     background-color: var(--gris-claro);
 }
 
-.boton-general{
+#boton-generales-id {
+    margin-left: 10px;
+}
+
+.boton-generales:hover {
+    color: var(--textos);
+    background-color: #2424245e;
+}
+
+.boton-generales{
+    
     background-color: var(--celeste);
-    box-sizing: border-box;
     border-radius: 5px;
     color: white;
     padding: 2%;
-    width: 20%;
+    width: 400px;
+    height: 100px;
     margin: 2%;
-    font-weight: 300;
-    text-align: center;
     align-self: center;
-    font-size: larger;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }
 
 .boton-general:hover{
     background-color: var(--gris-claro);
 }
 
-.boton-general a {
-    color: white;
+a, .generales-texto h3 {
     text-decoration: none;
+    color: white;
+    font-weight: normal;
+
 }
 
 .texto-encima-botones{
