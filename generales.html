@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css/pages/common.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="CSS/pages/generales.css" />
 </head>
 
@@ -43,7 +43,9 @@
                     class="texto-boton"></span>Filtrar</button>
             <a class="active" href="informes.html">Informes</a>
             <!--<a href="#contact">Contacto</a>-->
-            <a href="index.html"><button id="boton-inicio">Inicio</button></a>
+            <div class="contenedor-boton-inicio">
+                <a href="index.html"><button id="boton-inicio">Inicio</button></a>
+            </div>
 
         </div>
 
@@ -297,9 +299,10 @@
                         </td>
                 </tr>
             </table>
-            <table>
-                <tr>
-                    <td class="agrupaciones">
+           
+                <div class="recuadros-contenedor">
+                    <div class="agrupaciones">
+                        <div class="agrupaciones-contenido">
                         <p>Agrupaciones políticas</p>
                         <p2>Juntos por el cambio</p2>
                         <br>
@@ -336,10 +339,12 @@
                                 <span class="progress-bar-text">75%</span>
                             </div>
                         </div>
-                    </td>
-
-                    <td class="mapa">
+                        </div>
+                    </div>
+                    
+                    <div class="mapa">
                         <p>Buenos Aires</p>
+
                         <svg height="210" width="300">
                             <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" fill="#18a0fb" fill-opacity="1"
@@ -347,9 +352,10 @@
                                 d="M171 55L163 53L150 45L147 50L143 49L133 60L114 60L114 151L116 151L120 155L122 156L126 153L128 149L124 145L126 143L126 138L128 138L129 133L126 129L126 122L134 126L139 126L169 119L179 114L189 97L190 89L189 87L186 87L182 82L185 75L181 69L171 63L170 64L170 58z">
                             </path>
                         </svg>
-                    </td>
 
-                    <td class="resumen">
+                    </div>
+
+                    <div class="resumen">
                         <div class="chart-wrap horizontal">
 
                             <p class="title">Resumen de votos</p>
@@ -380,9 +386,9 @@
 
                             </div>
                         </div>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+            
 
             <br>
 
