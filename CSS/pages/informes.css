@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 @import 'estilos.css';
 
-.reporte{
-    padding-left: 100px;
-}
-
 .dir {
     display: inline-block;
     vertical-align: middle;
@@ -18,45 +14,6 @@
 
 #boton-inicio {
     color: white;
-<<<<<<< HEAD
-    margin-left: 15px;
-    margin-right: 5px;
-}
-nav a {
-    background-color: var(--fondo-Cabecera);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 0.5% 1%;
-    box-sizing: border-box;
-    font-size: small;
-    margin-left: 1%;
-    width: 8%; 
-    font-size: 12px;
-    text-align: center;
-} 
-
-nav a:hover{
-    background-color: var(--gris-claro);
-}
-
-.inicio {
-    margin-left: 67%;
-    color: white;
-    background-color: var(--gris-claro);
-    border-radius: 5px;
-    border: none;
-    font-family: #fff;
-    font-size: 12px;
-    text-transform: uppercase;
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-} 
-.inicio:hover{
-    color:var(--textos);
-}
-=======
     background-color: var(--gris-claro);
     border-radius: 5px;
     padding: 5px;
@@ -77,7 +34,6 @@ nav a:hover{
     background-color: #ddd;
 }
 
->>>>>>> 6c3c925856d106231ee373c9abb6f7bf53da61af
 .texto-elecciones-chico {
     font-size: 12px;
     color: var(--textos);
@@ -88,23 +44,9 @@ nav a:hover{
     color: var(--celeste);
 }
 
-<<<<<<< HEAD
-.general {
-    max-width: 1024px;
-=======
 .General {
->>>>>>> 6c3c925856d106231ee373c9abb6f7bf53da61af
     margin: 0 auto 50px auto;
-    border-collapse: separate;
-    border: 1px solid black;
     border-radius: 15px;
-<<<<<<< HEAD
-    background-color: rgb(250, 250, 250);
-}
-
-
-tbody {
-=======
     border: 1px solid var(--borde-Grilla);
     background-color: rgb(250, 250, 250);
     color: var(--titulo-grilla);
@@ -131,22 +73,17 @@ tbody {
 }
 
 td {
->>>>>>> 6c3c925856d106231ee373c9abb6f7bf53da61af
     background-color: rgb(255, 255, 255);
-    border-collapse: collapse;
-    border-bottom: 1px solid var(--borde-inferior-grilla);
+    padding: 15px 0px;
     font-size: 12px;
-    
-}
-
-
-
-tbody tr:hover{
-    background-color: rgb(250, 250, 250);
+    border-collapse: collapse;
 }
 .tabla-anid {
     border: 1px solid #dddddd;  
-    border: 0px;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
     border-collapse: collapse;
 }
 
@@ -189,17 +126,18 @@ tbody tr:hover{
 .mesas-comp {
     background-color: var(--celeste);
     border-radius: 10px;
-    margin: 2px;
+    margin: 15px;
     width: 140px;
     height: 60px;
     padding: 0.5rem 1rem;
-    display: flex;
     align-items: center;
+    display: flex;
+
 }
 .elec {
     background-color: var(--magenta);
     border-radius: 10px;
-    margin-bottom: 2px;
+    margin: 15px;
     width: 140px;
     height: 60px;
     padding: 0.5rem 1rem;
@@ -210,7 +148,7 @@ tbody tr:hover{
 .part-esc {
     background-color: var(--morado);
     border-radius: 10px;
-    margin: 2px;
+    margin: 15px;
     width: 140px;
     height: 60px;
     padding: 0.5rem 1rem;
@@ -221,18 +159,24 @@ tbody tr:hover{
     display: flex;
     flex-direction: column;
     color: white;
+    text-align: center;
+    
+    
+    
 }
 
 .elec p {
-    display: flex;
-    flex-direction: column;
     color: white;
+    color: #fff;
+    margin-bottom: 0px;
 }    
 
 .part-esc p {
     display: flex;
     flex-direction: column;
     color: white;
+
+   
 }
 .container {
     display: flex;
@@ -302,14 +246,13 @@ tbody tr:hover{
     display: flex;
     flex-direction: column;
 }
-.tab-1 {
+.tab1 {
     border: none;
     border-collapse: collapse;
  
 }
-.sep {
+td, .sep {
     padding-left: 18px;
-    padding-right: 18px;
 }
 .sep1 {
     padding-left: 50px;
