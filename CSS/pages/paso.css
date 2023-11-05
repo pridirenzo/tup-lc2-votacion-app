@@ -443,3 +443,12 @@ p {
     display: inline-block;
     white-space: nowrap;
 }
+
+#filtro-año {
+    width: 70px;
+}
+
+#filtro-distrito, #filtro-cargo {
+
+   width: 140px;
+}
