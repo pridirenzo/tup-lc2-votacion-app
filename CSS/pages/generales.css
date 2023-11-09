@@ -429,7 +429,7 @@ p {
     width: 70px;
 }
 
-#filtro-distrito, #filtro-cargo {
+#filtro-distrito, #filtro-cargo, #filtro-seccion {
 
    width: 140px;
 }
