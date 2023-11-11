@@ -437,3 +437,18 @@ p {
 .mensaje-1, .mensaje-2, .mensaje-3 {
     display: none;
 }
+
+
+
+#cartel-carga{
+    background-color: rgb(37, 85, 81);
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFffFF;
+    font-size: 15px;
+    font-weight: 200px;
+    text-align: center;
+    display: none;
+};
