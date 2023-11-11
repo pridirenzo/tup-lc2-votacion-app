@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             return;
         }
-
-        // Recuperar los valores del filtro
+        else {
+            // Recuperar los valores del filtro
         const anioEleccion = comboAnioID.value;
         const categoriaId = comboCargoID.value;
         const distritoId = comboDistritoID.value;
@@ -160,18 +160,25 @@ document.addEventListener('DOMContentLoaded', function () {
         const seccionId = comboSeccionID.value;
         const circuitoId = ""; 
         const mesaId = "";
+
         const url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
 
         try {
             const response = await fetch(url);
             const data = await response.json();
-
-
             console.log(data);
         } catch (error) {
 
             document.getElementById("men2").style.display = "block";
             console.error(error);
         }
+
+        const tituloID = document.getElementById("titulo-elecciones");
+        const subtituloID = document.getElementById("subtitulo-elecciones");
+        tituloID.innerHTML = "Elecciones" + " " + anioEleccion + " " + " | " + "Generales";
+        subtituloID.innerHTML = anioEleccion + ">" + "Generales" + ">" + categoriaId + ">" + distritoId + ">" + seccionId;
+        }
+
+        
     });
 });
