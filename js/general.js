@@ -6,6 +6,8 @@ const comboCargoID = document.getElementById("filtro-cargo");
 const comboDistritoID = document.getElementById("filtro-distrito");
 const comboSeccionID = document.getElementById("filtro-seccion");
 const hdSeccionProvincial = document.getElementById("hdSeccionProvincial");
+const botonAgregarInforme = document.getElementById("agregar-informe");
+let distritoElegido;
 
 // COMBO AÑO
 
@@ -76,7 +78,7 @@ comboCargoID.addEventListener('change', function () {
                         if (cargo.IdCargo == comboCargoID.value) {
                             cargo.Distritos.forEach(distrito => {
                                 let option = document.createElement("option");
-                                option.text = distrito.Distrito;
+                                option.text = distrito.Distrito.toUpperCase();
                                 option.value = distrito.IdDistrito;
                                 comboDistritoID.add(option);
                             });
@@ -108,6 +110,7 @@ comboDistritoID.addEventListener('change', function () {
                         if (cargo.IdCargo == comboCargoID.value) {
                             cargo.Distritos.forEach(distrito => {
                                 if (distrito.IdDistrito == comboDistritoID.value) {
+                                    distritoElegido = comboDistritoID.options[comboDistritoID.selectedIndex].text;
                                     hdSeccionProvincial.value = distrito.IdSeccionProvincial;
                                     distrito.SeccionesProvinciales.forEach(seccionProvincial => {
                                         seccionProvincial.Secciones.forEach(seccion => {
@@ -167,6 +170,21 @@ document.addEventListener('DOMContentLoaded', function () {
             const response = await fetch(url);
             const data = await response.json();
             console.log(data);
+
+            const mesasEscrutadas = data.estadoRecuento.mesasTotalizadas;
+            const electores = data.estadoRecuento.cantidadElectores;
+            const participacionEscrutado = data.estadoRecuento.participacionPorcentaje;
+
+        // Seleccionar los cuadros por su ID
+            const cuadroMesasEscrutadas = document.getElementById("mesas-escrutadas");
+            const cuadroElectores = document.getElementById("electores");
+            const cuadroParticipacionEscrutado = document.getElementById("participacion-escrutado");
+
+// Llenar los cuadros con la información del JSON
+            cuadroMesasEscrutadas.innerHTML = mesasEscrutadas;
+            cuadroElectores.innerHTML = electores;
+            cuadroParticipacionEscrutado.innerHTML = participacionEscrutado;
+
         } catch (error) {
 
             document.getElementById("men2").style.display = "block";
@@ -176,9 +194,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const tituloID = document.getElementById("titulo-elecciones");
         const subtituloID = document.getElementById("subtitulo-elecciones");
         tituloID.innerHTML = "Elecciones" + " " + anioEleccion + " " + " | " + "Generales";
-        subtituloID.innerHTML = anioEleccion + ">" + "Generales" + ">" + categoriaId + ">" + distritoId + ">" + seccionId;
-        }
+        subtituloID.innerHTML = anioEleccion + ">" + "Generales" + ">" + comboCargoID.options[comboCargoID.selectedIndex].text + ">" + comboDistritoID.options[comboDistritoID.selectedIndex].text + ">" + comboSeccionID.options[comboSeccionID.selectedIndex].text;
+        
+
+        
+        document.getElementById("svgMapa").innerHTML = mapas[distritoElegido];
+        document.getElementById("texto-mapa").innerHTML = distritoElegido;
+    }
 
         
     });
 });
+
+botonAgregarInforme.addEventListener('click', async function () {
+
+
+    let arrayInforme = [{"Año": comboAnioID.value, "Cargo": comboCargoID.options[comboCargoID.selectedIndex].text, "Distrito": comboDistritoID.options[comboDistritoID.selectedIndex].text, "Sección": comboSeccionID.options[comboSeccionID.selectedIndex].text}];
+    let arrayJSON = JSON.stringify(arrayInforme);
+    localStorage.setItem('arrayInforme', arrayJSON);
+
+})
