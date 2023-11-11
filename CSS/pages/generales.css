@@ -433,3 +433,7 @@ p {
 
    width: 140px;
 }
+
+.mensaje-1, .mensaje-2, .mensaje-3 {
+    display: none;
+}

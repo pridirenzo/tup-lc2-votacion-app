@@ -12,6 +12,13 @@ fetch("https://resultados.mininterior.gob.ar/api/menu/periodos")
     .then(DatosFiltros => DatosFiltros.json())
     .then(DatosFiltros => {
 
+        let option = document.createElement("option");
+        option.text = "Sección";
+        option.value = "";
+        option.disabled = true;
+        option.selected = true;
+        comboSeccionID.add(option);
+
 
         DatosFiltros.forEach(item => {
             let option = document.createElement("option");
@@ -24,6 +31,13 @@ fetch("https://resultados.mininterior.gob.ar/api/menu/periodos")
 //COMBO CARGO
 comboAnioID.addEventListener('change', function () {
     comboCargoID.innerHTML = "";
+
+    let option = document.createElement("option");
+    option.text = "Cargo";
+    option.value = "";
+    option.disabled = true;
+    option.selected = true;
+    comboCargoID.add(option);
 
     fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + comboAnioID.value)
         .then(DatosFiltros => DatosFiltros.json())
@@ -45,6 +59,13 @@ comboAnioID.addEventListener('change', function () {
 comboCargoID.addEventListener('change', function () {
 
     comboDistritoID.innerHTML = "";
+
+    let option = document.createElement("option");
+    option.text = "Distrito";
+    option.value = "";
+    option.disabled = true;
+    option.selected = true;
+    comboDistritoID.add(option);
 
     fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + comboAnioID.value)
         .then(DatosFiltros => DatosFiltros.json())
@@ -71,6 +92,13 @@ comboCargoID.addEventListener('change', function () {
 comboDistritoID.addEventListener('change', function () {
     comboSeccionID.innerHTML = "";
 
+    let option = document.createElement("option");
+    option.text = "Sección";
+    option.value = "";
+    option.disabled = true;
+    option.selected = true;
+    comboSeccionID.add(option);
+
     fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + comboAnioID.value)
         .then(DatosFiltros => DatosFiltros.json())
         .then(DatosFiltros => {
@@ -96,4 +124,39 @@ comboDistritoID.addEventListener('change', function () {
                 }
             });
         });
+});
+
+//BOTON FILTRAR
+document.addEventListener('DOMContentLoaded', function () {
+    const botonFiltro = document.getElementById("boton-filtro");
+
+    botonFiltro.addEventListener('click', async function () {
+        if (!comboAnioID.value || !comboCargoID.value || !comboDistritoID.value || !comboSeccionID.value) {
+
+            document.getElementById("men3").style.display = "block";
+            return;
+        }
+
+        // Recuperar los valores del filtro
+        const anioEleccion = comboAnioID.value;
+        const categoriaId = comboCargoID.value;
+        const distritoId = comboDistritoID.value;
+        const seccionProvincialId = hdSeccionProvincial.value;
+        const seccionId = comboSeccionID.value;
+        const circuitoId = ""; 
+        const mesaId = "";
+        const url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+
+            console.log(data);
+        } catch (error) {
+
+            document.getElementById("men2").style.display = "block";
+            console.error(error);
+        }
+    });
 });
