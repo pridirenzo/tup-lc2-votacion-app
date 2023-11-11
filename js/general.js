@@ -134,6 +134,18 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!comboAnioID.value || !comboCargoID.value || !comboDistritoID.value || !comboSeccionID.value) {
 
             document.getElementById("men3").style.display = "block";
+
+            if (comboAnioID.value == "Año") {
+                document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO AÑO";
+            }
+            else if (comboCargoID.value != "Cargo"){
+                document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO CARGO";
+            }
+            if(comboDistritoID.value != "Distrito"){
+                document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO DISTRITO";
+            }
+    
+
             return;
         }
 
