@@ -28,7 +28,9 @@
     cursor: pointer;
 }
 
-
+td{
+    padding-left: 18px;
+}
 #boton-inicio:hover, .gen:hover, .paso:hover {
     color: var(--textos);
     background-color: #ddd;
@@ -53,7 +55,7 @@
 
 }
 
-.celdas1 th {
+.cabeza-tabla {
     color: var(--titulo-Grilla);
     padding: 10px, 20px;
     border-bottom: 1px solid var(--borde-Grilla);
@@ -76,15 +78,9 @@ td {
     background-color: rgb(255, 255, 255);
     padding: 15px 0px;
     font-size: 12px;
-    border-collapse: collapse;
-}
-.tabla-anid {
-    border: 1px solid #dddddd;  
-    border-bottom: 0px;
-    border-top: 0px;
-    border-right: 0px;
-    border-left: 0px;
-    border-collapse: collapse;
+    text-align: center;
+    
+
 }
 
 .texto-elecciones-chico {
@@ -246,14 +242,33 @@ td {
     display: flex;
     flex-direction: column;
 }
-.tab1 {
-    border: none;
-    border-collapse: collapse;
- 
+
+
+#mapa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    Border: 1px var(borde-Grilla) solid;
 }
-td, .sep {
-    padding-left: 18px;
+.contenedor-datos {
+display: flex;
 }
-.sep1 {
-    padding-left: 50px;
+.columna1 {
+    display: flex;
+    flex: 1; /* Distribuye el espacio de manera uniforme entre las columnas */
+    flex-direction: column;
+    align-content: space-around;
+    margin: 15px;
+    text-align: left;
+}
+.columna2 {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+tbody :hover{
+    background-color: rgb(250, 250, 250)
+}
+div > p {
+    text-align: right;
 }

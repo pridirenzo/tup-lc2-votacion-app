@@ -48,10 +48,10 @@
         </section>
         <section id="sec-contenido">
 
-            <table class="General">
+            <table style="border-collapse: collapse; border-radius: 10px; overflow: hidden; border: 1px solid var(--borde-Grilla);" class="General">
                 <thead class="cabeza-tabla">
                     <tr class="celdas1">
-                        <th rowspan="4">PROVINCIA</th>
+                        <th>PROVINCIA</th>
                         <th>ELECCIÓN</th>
                         <th>DATOS GENERALES</th>
                         <th>DATOS POR AGRUPACIÓN</th>
@@ -60,10 +60,10 @@
                 <tbody>
                     <tr>
                         <td rowspan="4">
-                            <!--//Ciudad Autónoma de Buenos Aires//-->
-                            <svg height="210" width="300">
-                                <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" fill="#18a0fb" fill-opacity="1" fill-rule="evenodd" d="M182 61L179 56L176 58L178 56L176
+                            <div id="mapa">
+                                <svg height="210" width="300"><path class="leaflet-interactive" stroke="#18a0fb"
+                                    stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    fill="#18a0fb" fill-opacity="1" fill-rule="evenodd" d="M182 61L179 56L176 58L178 56L176
                                     53L173 55L169 47L168 48L164 45L157 43L158 41L155 41L154 36L149 32L148 33L143 29L142
                                     30L145 32L140 29L138 32L137 30L140 29L139 26L137 28L136 23L133 22L130 27L103 41L81
                                     99L82 134L131 179L159 140L168 137L171 139L174 138L181 141L186 137L195 136L200 130L207
@@ -71,8 +71,8 @@
                                     111L217 109L221 111L224 109L220 106L222 106L221 102L218 102L216 104L215 103L217 102L212
                                     102L220 101L219 95L216 92L214 86L208 81L200 83L199 80L201 79L202 81L200 77L206 75L203
                                     75L203 73L206 73L201 71L205 70L199 69L198 68L202 68L200 66L195 67L194 66L198 65L188
-                                    62L192 62L190 60L183 59L189 64L187 65z"></path>
-                            </svg>
+                                    62L192 62L190 60L183 59L189 64L187 65z"></path></svg>
+                            </div>
                         </td>
                         <td>
                             <p class="texto-elecciones-chico">Elecciones 2020 | Generales</p>
@@ -298,18 +298,18 @@
                             </table>
                         </td>
                         <td>
-                            <table class="tab-1">
-                                <tbody class="anid">
-                                    <tr>
-                                        <td><b>JUNTOS</b></td>
-                                        <td class="sep">38% <br> 30000 votos</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>PJ</b></td>
-                                        <td class="sep1">20% <br> 30000 votos</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <div class="contenedor-datos">
+                                <div>
+                                    <p class="columna1"> <b>JUNTOS</b></p>
+                                    <p class="columna1"><b>PJ</b> </p>
+                                </div>
+                                <div class="columna2">
+                                <p>38% </p>
+                                <p>30000 votos</p>
+                                <p>20%</p>
+                                <p>30000 votos</p> 
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
