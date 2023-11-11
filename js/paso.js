@@ -8,16 +8,17 @@ const comboSeccionID = document.getElementById("filtro-seccion");
 const hdSeccionProvincial = document.getElementById("hdSeccionProvincial");
 
 // COMBO AÑO
+
+let option = document.createElement("option");
+option.text = "Año";
+option.value = "";
+option.disabled = true;
+option.selected = true;
+comboAnioID.add(option);
+
 fetch("https://resultados.mininterior.gob.ar/api/menu/periodos")
     .then(DatosFiltros => DatosFiltros.json())
     .then(DatosFiltros => {
-
-        let option = document.createElement("option");
-        option.text = "Sección";
-        option.value = "";
-        option.disabled = true;
-        option.selected = true;
-        comboSeccionID.add(option);
 
 
         DatosFiltros.forEach(item => {
@@ -128,30 +129,24 @@ comboDistritoID.addEventListener('change', function () {
 
 //BOTON FILTRAR
 document.addEventListener('DOMContentLoaded', function () {
+
     const botonFiltro = document.getElementById("boton-filtro");
 
     botonFiltro.addEventListener('click', async function () {
-        validacion = false;
-        console.log(comboAnioID.value);
-        console.log(comboCargoID.value);
-        console.log(comboDistritoID.value);
-        console.log(comboSeccionID.value);
-
         if (!comboAnioID.value || !comboCargoID.value || !comboDistritoID.value || !comboSeccionID.value) {
 
             document.getElementById("men3").style.display = "block";
 
-            if (comboAnioID.value == "Año") {
+            if (comboAnioID.value != "Año") {
                 document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO AÑO";
             }
-            else if (comboCargoID.value != "Cargo"){
+            if (comboCargoID.value != "Cargo"){
                 document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO CARGO";
             }
             if(comboDistritoID.value != "Distrito"){
                 document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO DISTRITO";
-            }
-    
-        
+            }            
+
             return;
         }
 
