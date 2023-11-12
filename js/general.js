@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         else {
-            // Recuperar los valores del filtro
+
             const anioEleccion = comboAnioID.value;
             const categoriaId = comboCargoID.value;
             const distritoId = comboDistritoID.value;
@@ -189,12 +189,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const electores = data.estadoRecuento.cantidadElectores;
                 const participacionEscrutado = data.estadoRecuento.participacionPorcentaje;
 
-                // Seleccionar los cuadros por su ID
+
                 const cuadroMesasEscrutadas = document.getElementById("1textos-recuadros-2");
                 const cuadroElectores = document.getElementById("2textos-recuadros-2");
                 const cuadroParticipacionEscrutado = document.getElementById("3textos-recuadros-2");
 
-                // Llenar los cuadros con la información del JSON
                 cuadroMesasEscrutadas.textContent = mesasEscrutadas + "%";
                 cuadroElectores.textContent = electores + "%";
                 cuadroParticipacionEscrutado.textContent = participacionEscrutado + "%";
@@ -222,14 +221,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let informes = [];
 
-// Recuperar los informes existentes de localStorage
+
 const informesGuardados = localStorage.getItem('INFORMES');
 if (informesGuardados) {
     informes = JSON.parse(informesGuardados);
 }
 
 botonAgregarInforme.addEventListener('click', function () {
-    // Crear una cadena con los valores seleccionados
+
     
     if (!comboAnioID.value || !comboCargoID.value || !comboDistritoID.value || !comboSeccionID.value) {
         document.getElementById("men2").style.display = "block";
@@ -241,9 +240,9 @@ botonAgregarInforme.addEventListener('click', function () {
     else {
         const informe = `${comboAnioID.value}|${tipoRecuento}|${tipoEleccion}|${comboCargoID.value}|${comboDistritoID.value}|${hdSeccionProvincial.value}|${comboSeccionID.value}`;
 
-        // Verificar si el informe ya existe en el array
+
         if (informes.includes(informe)) {
-            // Mostrar un mensaje de error en amarillo
+
             document.getElementById("men2").style.display = "block";
             document.getElementById("men2").textContent = "ERROR! ESTE INFORME YA EXISTE";
             setTimeout(function() {
@@ -252,13 +251,12 @@ botonAgregarInforme.addEventListener('click', function () {
             
             
         } else {
-            // Agregar el informe al array
+
             informes.push(informe);
 
-            // Guardar el array en localStorage
             localStorage.setItem('INFORMES', JSON.stringify(informes));
 
-            // Mostrar un mensaje de éxito en verde
+
             document.getElementById("men1").style.display = "block";
             document.getElementById("men1").textContent = "¡OPERACIÓN EXITOSA! INFORME AGREGADO";
             setTimeout(function() {

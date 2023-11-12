@@ -11,6 +11,7 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="CSS/common.css" />
     <link rel="stylesheet" href="CSS/pages/paso.css" />
+    <script src="js/mapas.js" defer></script>
 </head>
 
 <body>
@@ -71,8 +72,8 @@
                     intentar agregar resultados al informe.</div>
                 <div class="mensaje-3" id="men3"><i class="fa-solid fa-exclamation"></i>La operación no se pudo completar.</div>
             </div>
-            <h2>Elecciones 2021 | Paso</h2>
-            <p>2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires</p>
+            <h2 id="titulo-elecciones">Elecciones 2021 | Paso</h2>
+            <p id="subtitulo-elecciones">2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires</p>
 
         </section>
         <section id="sec-contenido">
@@ -139,7 +140,7 @@
 
                                     <div id="textos-recuadros">
                                         <p>Mesas escrutadas
-                                        <div id="textos-recuadros-2">62.71%</div>
+                                        <div id="1textos-recuadros-2">62.71%</div>
                                         </p>
                                     </div>
                                 </svg>
@@ -237,7 +238,7 @@
                                 </svg>
                                 <div id="textos-recuadros">
                                     <p>Electores
-                                    <div id="textos-recuadros-2">62.71%</div>
+                                    <div id="2textos-recuadros-2">62.71%</div>
                                     </p>
                                 </div>
                         </td>
@@ -300,7 +301,7 @@
                                 </svg>
                                 <div id="textos-recuadros">
                                     <p>Participación sobre escrutado
-                                    <div id="textos-recuadros-2">62.71%</div>
+                                    <div id="3textos-recuadros-2">62.71%</div>
                                     </p>
                                 </div>
                             </div>
@@ -353,13 +354,16 @@
                 <div class="mapa">
                     <p>Buenos Aires</p>
 
-                    <svg height="210" width="300">
-                        <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" fill="#18a0fb" fill-opacity="1"
-                            fill-rule="evenodd"
-                            d="M171 55L163 53L150 45L147 50L143 49L133 60L114 60L114 151L116 151L120 155L122 156L126 153L128 149L124 145L126 143L126 138L128 138L129 133L126 129L126 122L134 126L139 126L169 119L179 114L189 97L190 89L189 87L186 87L182 82L185 75L181 69L171 63L170 64L170 58z">
-                        </path>
-                    </svg>
+                    <p id="texto-mapa">Buenos Aires</p>
+                    <div id="svgMapa">
+                        <svg height="210" width="300">
+                            <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="#18a0fb" fill-opacity="1"
+                                fill-rule="evenodd"
+                                d="M171 55L163 53L150 45L147 50L143 49L133 60L114 60L114 151L116 151L120 155L122 156L126 153L128 149L124 145L126 143L126 138L128 138L129 133L126 129L126 122L134 126L139 126L169 119L179 114L189 97L190 89L189 87L186 87L182 82L185 75L181 69L171 63L170 64L170 58z">
+                            </path>
+                        </svg>
+                    </div>
 
                 </div>
 

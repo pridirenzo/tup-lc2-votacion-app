@@ -6,6 +6,8 @@ const comboCargoID = document.getElementById("filtro-cargo");
 const comboDistritoID = document.getElementById("filtro-distrito");
 const comboSeccionID = document.getElementById("filtro-seccion");
 const hdSeccionProvincial = document.getElementById("hdSeccionProvincial");
+const botonAgregarInforme = document.getElementById("agregar-informe");
+let distritoElegido;
 
 // COMBO AÑO
 
@@ -19,7 +21,6 @@ comboAnioID.add(option);
 fetch("https://resultados.mininterior.gob.ar/api/menu/periodos")
     .then(DatosFiltros => DatosFiltros.json())
     .then(DatosFiltros => {
-
 
         DatosFiltros.forEach(item => {
             let option = document.createElement("option");
@@ -77,7 +78,7 @@ comboCargoID.addEventListener('change', function () {
                         if (cargo.IdCargo == comboCargoID.value) {
                             cargo.Distritos.forEach(distrito => {
                                 let option = document.createElement("option");
-                                option.text = distrito.Distrito;
+                                option.text = distrito.Distrito.toUpperCase();
                                 option.value = distrito.IdDistrito;
                                 comboDistritoID.add(option);
                             });
@@ -109,6 +110,7 @@ comboDistritoID.addEventListener('change', function () {
                         if (cargo.IdCargo == comboCargoID.value) {
                             cargo.Distritos.forEach(distrito => {
                                 if (distrito.IdDistrito == comboDistritoID.value) {
+                                    distritoElegido = comboDistritoID.options[comboDistritoID.selectedIndex].text;
                                     hdSeccionProvincial.value = distrito.IdSeccionProvincial;
                                     distrito.SeccionesProvinciales.forEach(seccionProvincial => {
                                         seccionProvincial.Secciones.forEach(seccion => {
@@ -133,46 +135,133 @@ document.addEventListener('DOMContentLoaded', function () {
     const botonFiltro = document.getElementById("boton-filtro");
 
     botonFiltro.addEventListener('click', async function () {
+
+        document.getElementById("cartel-carga").style.display = "block";
+        document.getElementById("cartel-carga").textContent = "Cargando...";
+    
+        setTimeout(function() {
+            document.getElementById("cartel-carga").style.display = "none";
+        }, 1500);
+
         if (!comboAnioID.value || !comboCargoID.value || !comboDistritoID.value || !comboSeccionID.value) {
 
-            document.getElementById("men3").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("men3").style.display = "block";
+            }, 2000);
 
             if (comboAnioID.value != "Año") {
                 document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO AÑO";
             }
-            if (comboCargoID.value != "Cargo"){
+            if (comboCargoID.value != "Cargo") {
                 document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO CARGO";
             }
-            if(comboDistritoID.value != "Distrito"){
+            if (comboDistritoID.value != "Distrito") {
                 document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO DISTRITO";
-            }            
+            }
+            if (comboSeccionID.value != "Sección") {
+                document.getElementById("men3").textContent = "ERROR! DEBE COMPLETAR EL CAMPO SECCIÓN";
+            }
+
+            setTimeout(function() {
+                document.getElementById("men3").style.display = "none";
+            }, 4000);
 
             return;
         }
+        else {
 
-        // Recuperar los valores del filtro
-        const anioEleccion = comboAnioID.value;
-        const categoriaId = comboCargoID.value;
-        const distritoId = comboDistritoID.value;
-        const seccionProvincialId = hdSeccionProvincial.value;
-        const seccionId = comboSeccionID.value;
-        const circuitoId = ""; 
-        const mesaId = "";
-        const url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
+            const anioEleccion = comboAnioID.value;
+            const categoriaId = comboCargoID.value;
+            const distritoId = comboDistritoID.value;
+            const seccionProvincialId = hdSeccionProvincial.value;
+            const seccionId = comboSeccionID.value;
+            const circuitoId = "";
+            const mesaId = "";
 
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
+            const url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
+            console.log(url)
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                console.log(data);
+
+                const mesasEscrutadas = data.estadoRecuento.mesasTotalizadas;
+                const electores = data.estadoRecuento.cantidadElectores;
+                const participacionEscrutado = data.estadoRecuento.participacionPorcentaje;
 
 
-            console.log(data);
-        } catch (error) {
+                const cuadroMesasEscrutadas = document.getElementById("1textos-recuadros-2");
+                const cuadroElectores = document.getElementById("2textos-recuadros-2");
+                const cuadroParticipacionEscrutado = document.getElementById("3textos-recuadros-2");
 
-            document.getElementById("men2").style.display = "block";
-            console.error(error);
+                cuadroMesasEscrutadas.textContent = mesasEscrutadas + "%";
+                cuadroElectores.textContent = electores + "%";
+                cuadroParticipacionEscrutado.textContent = participacionEscrutado + "%";
+
+            } catch (error) {
+
+                document.getElementById("men2").style.display = "block";
+                console.error(error);
+            }
+
+            const tituloID = document.getElementById("titulo-elecciones");
+            const subtituloID = document.getElementById("subtitulo-elecciones");
+            tituloID.innerHTML = "Elecciones" + " " + anioEleccion + " " + " | " + "Paso";
+            subtituloID.innerHTML = anioEleccion + ">" + "Paso" + ">" + comboCargoID.options[comboCargoID.selectedIndex].text + ">" + comboDistritoID.options[comboDistritoID.selectedIndex].text + ">" + comboSeccionID.options[comboSeccionID.selectedIndex].text;
+
+
+
+            document.getElementById("svgMapa").innerHTML = mapas[distritoElegido];
+            document.getElementById("texto-mapa").innerHTML = distritoElegido;
         }
+
+
     });
 });
 
+let informes = [];
 
 
+const informesGuardados = localStorage.getItem('INFORMES');
+if (informesGuardados) {
+    informes = JSON.parse(informesGuardados);
+}
+
+botonAgregarInforme.addEventListener('click', function () {
+
+    
+    if (!comboAnioID.value || !comboCargoID.value || !comboDistritoID.value || !comboSeccionID.value) {
+        document.getElementById("men2").style.display = "block";
+        document.getElementById("men2").textContent = "ERROR! PRIMERO DEBE COMPLETAR LOS CAMPOS Y LUEGO FILTRAR.";
+        setTimeout(function() {
+            document.getElementById("men2").style.display = "none";
+        }, 2000);
+    }
+    else {
+        const informe = `${comboAnioID.value}|${tipoRecuento}|${tipoEleccion}|${comboCargoID.value}|${comboDistritoID.value}|${hdSeccionProvincial.value}|${comboSeccionID.value}`;
+
+
+        if (informes.includes(informe)) {
+
+            document.getElementById("men2").style.display = "block";
+            document.getElementById("men2").textContent = "ERROR! ESTE INFORME YA EXISTE";
+            setTimeout(function() {
+                document.getElementById("men2").style.display = "none";
+            }, 2000);
+            
+            
+        } else {
+
+            informes.push(informe);
+
+            localStorage.setItem('INFORMES', JSON.stringify(informes));
+
+
+            document.getElementById("men1").style.display = "block";
+            document.getElementById("men1").textContent = "¡OPERACIÓN EXITOSA! INFORME AGREGADO";
+            setTimeout(function() {
+                document.getElementById("men1").style.display = "none";
+            }, 2000);
+        }
+    }
+});
