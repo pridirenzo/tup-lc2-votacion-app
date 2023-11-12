@@ -173,12 +173,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const anioEleccion = comboAnioID.value;
             const categoriaId = comboCargoID.value;
             const distritoId = comboDistritoID.value;
-            const seccionProvincialId = hdSeccionProvincial.value;
             const seccionId = comboSeccionID.value;
             const circuitoId = "";
             const mesaId = "";
 
-            const url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
+            const url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
             console.log(url)
             try {
                 const response = await fetch(url);
@@ -190,12 +189,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 const participacionEscrutado = data.estadoRecuento.participacionPorcentaje;
 
 
+               
                 const cuadroMesasEscrutadas = document.getElementById("1textos-recuadros-2");
                 const cuadroElectores = document.getElementById("2textos-recuadros-2");
                 const cuadroParticipacionEscrutado = document.getElementById("3textos-recuadros-2");
+                cuadroMesasEscrutadas.style.color = "white";
+                cuadroElectores.style.color = "white";
+                cuadroParticipacionEscrutado.style.color = "white";
+                cuadroMesasEscrutadas.style.display = "block";
+                cuadroElectores.style.display = "block";
+                cuadroParticipacionEscrutado.style.display = "block";
 
-                cuadroMesasEscrutadas.textContent = mesasEscrutadas + "%";
-                cuadroElectores.textContent = electores + "%";
+                cuadroMesasEscrutadas.textContent = mesasEscrutadas;
+                cuadroElectores.textContent = electores;
                 cuadroParticipacionEscrutado.textContent = participacionEscrutado + "%";
 
             } catch (error) {
