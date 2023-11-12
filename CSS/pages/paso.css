@@ -468,6 +468,6 @@ p {
     font-size: 15px;
     font-weight: 200px;
     text-align: center;
-    display: none;
+    display: block;
 };
 
